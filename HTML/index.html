@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="21039071_Nguyễn Tấn Đãm" content="Thi Cuối Kỳ">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <script src="../JS/java.js"></script>
+    <script src="../JS/jquery364.js"></script>
+    <script src="../JS/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row align-items-center" style="background-color: #FFC107; padding: 10px;">
+            <div class="col-2">
+                <img src="../IMAGES/logo7.png" alt="Logo7" style="width: 100%;">
+            </div>
+            <div class="col-10">
+                <ul class="nav">
+                    <li class="nav-item"><a href="" class="nav-link">Trang chủ</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Giới thiệu</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Dịch vụ</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#myModal">Ký gửi hàng hóa</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" style="border-bottom: 2px solid grey;">
+            <div class="col-9">&ltForm&gt</div>
+            <div class="col-3" style="background-color: #E4E8EB; padding: 15px; border-left: 2px solid grey;">
+                <h2>Qui định thanh toán</h2>
+                <ul style="list-style-type: square;">
+                    <li>Khách cọc từ 70% - 100% số tiền của đơn hàng.</li>
+                    <li>Hàng về sau 24-48 tiếng kể từ khi kho Trung Quốc ký nhận.</li>
+                    <li>Shop sẽ thanh lý đơn hàng nếu sau 1 tuần khách hàng không thanh toán tiền nhận hàng.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1>Danh sách kiện hàng hóa gửi</h1>
+                <table class="table table-striped" id="myTable">
+                    <tr>
+                        <th>STT</th>
+                        <th>Số serial</th>
+                        <th>Mô tả kiện hàng</th>
+                        <th>Hình ảnh</th>
+                        <th>Trọng lượng (kg)</th>
+                        <th>Phí vận chuyển (VND)</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center" style="background-color: #FFC107; padding: 10px 0;">21039071 - Nguyễn Tấn Đãm - DHCNTT17A</div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">Thông tin kiện hàng hóa gửi</div>
+                </div>
+                <div class="modal-body border-top">
+                    <form id="myForm">
+                        <div class="row">
+                            <div class="col-3">Số serial:</div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" name="" id="line1" class="form-control" oninput="check1()">
+                                    <div id="thongBao1" style="color: red;">(*)</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Mô tả kiện hàng</div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" name="" id="line2" class="form-control" oninput="check2()">
+                                    <div id="thongBao2" style="color: red;">(*)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Hình ảnh</div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="file" name="" id="line3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Trọng lượng (kg)</div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" name="" id="line4" class="form-control" oninput="check4()">
+                                    <div id="thongBao3" style="color: red;">(*)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Chi phí vận chuyển (VND)</div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" name="" id="line5" class="form-control" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-3">
+                                <button id="myClose" type="button" class="btn btn-outline-primary" onclick="save()">Xác nhận</button>
+                            </div>
+                            <div class="col-9"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
